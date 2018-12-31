@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+
+.login-card{
+	box-sizing: border-box;
+	padding-bottom: 36px;	
+}
+
+.login-header{
+	font-size: 24px;
+}
+
+.login-field{
+	width: 260px;
+}
+
+.loader{
+	position: absolute;
+	top: 25%;
+    left: 30%;
+}
+
+.inline-help-block{
+	font-size: 12px;
+	color: #f44336;
+}

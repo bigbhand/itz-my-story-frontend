@@ -1,0 +1,82 @@
+@CHARSET "ISO-8859-1";
+
+.login-card{
+	box-sizing: border-box;
+	padding-bottom: 36px;	
+}
+
+.login-header{
+	font-size: 24px;
+}
+
+.login-field{
+	width: 100%;
+}
+
+.login-link{
+	background-color: transparent;
+	color: #333;
+}
+
+.loader{
+	position: absolute;
+	top: 25%;
+    left: 30%;
+}
+
+.inline-help-block{
+	font-size: 12px;
+	color: #f44336;
+}
+
+.login-link-label{
+	font-family: Roboto,"Helvetica Neue",sans-serif;
+	font-size: 13px;
+	margin-left: 14%;
+    margin-right: -4%;
+    color: #444;
+}
+
+.col-30{
+	width: 30%;
+}
+
+.sign-in-link{
+	color: #7382d9;
+}
+
+.sign-in-link:HOVER{
+	color: #3244a5;
+}
+
+.radio-group-label{
+	color: rgba(0,0,0,.54);
+	display: inline-block;	
+	margin-right: 20px;
+}
+
+.radio-group{
+	width: 65%;
+	display: inline-block;
+	transform: scale(0.9);
+}
+
+.radio-option{
+	width: 30%;	
+}
+
+.col-2{
+	width: 49%;
+	box-sizing: border-box;
+}
+
+.seperator{
+	display: inline-block;
+	width: 2%;
+}
+
+.form-label{
+	font-family: Roboto,"Helvetica Neue",sans-serif;
+	font-size: 13px;
+    color: #444;
+}

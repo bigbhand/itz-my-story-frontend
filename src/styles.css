@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+	margin: 0px 0px;
+}
+
+.app-button-link{
+	background-color: transparent !important;
+	color: #333 !important;
+}
+
+.mat-16 {
+   font-size: 16px;
+}
+
+.mat-18 {
+   font-size: 18px;
+}
+
+.mat-20 {
+   font-size: 20px;
+}
+
+.mat-22 {
+   font-size: 22px;
+}
+
+.mat-24 {
+   font-size: 24px;
+}
+
+.mat-26 {
+   font-size: 26px;
+}
+
+.mat-28 {
+   font-size: 28px;
+}
+
+.mat-30 {
+   font-size: 30px;
+}
+
+.mat-32 {
+   font-size: 32px;
+}
+
+.mat-34 {
+   font-size: 34px;
+}
+
+.mat-color-theme{
+	color: rgba(87, 87, 86, 0.8);
+	fill: rgba(87, 87, 86, 0.8); 
+}
+
+.inline-block{
+	display: inline-block;
+}

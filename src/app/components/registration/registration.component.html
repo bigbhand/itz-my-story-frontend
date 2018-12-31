@@ -1,0 +1,110 @@
+<div style="width: 30%; margin: auto; margin-top: 3%;">
+
+	<mat-card class="login-card"> <mat-card-header>
+		<mat-card-title class="login-header">Registration</mat-card-title> </mat-card-header> 
+		
+		<mat-card-content>
+		<form novalidate [formGroup]="customer">
+			<table cellspacing="0">
+				<tr>
+					<td>
+						<mat-form-field class="login-field"> 
+							<input matInput placeholder="Name*" formControlName="name">
+							<mat-error>This field is mandatory</mat-error> 
+						</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-form-field class="login-field"> 
+							<input matInput placeholder="Email*" formControlName="email">
+							<mat-error *ngIf="customer.controls['email'].errors?.required">This field is mandatory</mat-error> 
+							<mat-error *ngIf="customer.controls['email'].errors?.email">Please provide valid email id</mat-error>
+						</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+							<mat-form-field class="login-field"> 
+								<input type="password" matInput placeholder="Password*" formControlName="password">
+								<mat-error>This field is mandatory</mat-error> 
+							</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-form-field class="login-field"> 
+								<input type="password" matInput placeholder="Confirm Password*" formControlName="cPassword">
+								<mat-error>This field is mandatory</mat-error> 
+							</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-form-field class="login-field"> 
+							<span matPrefix>+91 &nbsp;</span> 
+							<input type="tel" matInput placeholder="Mobile Number*" formControlName="mobile">
+							<mat-error *ngIf="customer.controls['mobile'].errors?.required">This field is mandatory</mat-error> 
+							<mat-error *ngIf="customer.controls['mobile'].errors?.maxLength">Maximun 10 characters are allowed</mat-error>
+						</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-form-field class="login-field"> 
+							<input matInput [matDatepicker]="dobPicker" placeholder="Date of Birth*" formControlName="dob">
+							<mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+	  						<mat-datepicker #dobPicker></mat-datepicker>
+	  						<mat-error>This field is mandatory</mat-error>
+						</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-form-field class="login-field"> 
+							<textarea matInput placeholder="Address" formControlName="address"></textarea> 
+						</mat-form-field>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					    <span>
+					    	<mat-form-field class="col-30">
+					      		<input matInput placeholder="City" formControlName="city">
+					    	</mat-form-field>
+					    </span>
+					    <span>
+					    	<mat-form-field class="col-30" style="margin-left: 5%; margin-right: 5%;">
+					      		<input matInput placeholder="State" formControlName="state">
+					    	</mat-form-field>
+					    </span>
+					    <span>
+					    	<mat-form-field class="col-30">
+					      		<input matInput #postalCode maxlength="6" placeholder="Pin Code" formControlName="pinCode">
+					      		<mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+					    	</mat-form-field>
+					    </span>
+				    </td>
+			    </tr>
+			    <tr>
+					<td>
+						<section>
+					      <mat-checkbox class="form-label" formControlName="accepted">
+					        I accept the terms &#38; conditions
+					      </mat-checkbox>
+					    </section>
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+		<mat-spinner class="loader" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+		</mat-card-content>
+		 
+		<mat-card-actions>
+			<button mat-raised-button color="primary" [disabled] = "showSpinner || customer.invalid" (onClick)="onSubmit() ">Register</button>
+			<span class="login-link-label">Already have an account? </span><a mat-flat-button class="login-link sign-in-link" [routerLink]="['/login']" >Sign in</a> 
+		</mat-card-actions> 
+	</mat-card>
+
+</div>

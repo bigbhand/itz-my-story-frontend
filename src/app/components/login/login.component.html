@@ -1,0 +1,45 @@
+<div style="width: 20%; margin: auto; margin-top: 10%;" *ngIf="!loggedIn">
+
+	<mat-card class="login-card"> 
+		<mat-card-header>
+			<mat-card-title class="login-header">Login</mat-card-title> 
+		</mat-card-header> 
+		
+		<mat-card-content>
+		<form novalidate>
+			<table cellspacing="0">
+				<tr>
+					<td>
+						<mat-form-field class="login-field" [ngClass]="{'mat-form-field-invalid': loginCliked && !uname.valid}"> 
+							<input matInput placeholder="Username" [(ngModel)]="credentials.username" #uname="ngModel" name="username" required email>
+							<button mat-button *ngIf="credentials.username" matSuffix mat-icon-button aria-label="Clear" (click)="credentials.username=''">
+							   <mat-icon>close</mat-icon>
+							</button> 
+						</mat-form-field>
+						<div *ngIf="loginCliked && !uname.valid" class="inline-help-block">Username is required</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-form-field class="login-field" [ngClass]="{'mat-form-field-invalid': loginCliked && !uname.valid}"> 
+							<input matInput placeholder="Password" [(ngModel)]="credentials.password" #pwd="ngModel" type="password" name="password" required>
+							<button mat-button *ngIf="credentials.password" matSuffix mat-icon-button aria-label="Clear" (click)="credentials.password=''">
+							   <mat-icon>close</mat-icon>
+							</button>  
+						</mat-form-field>
+						<div *ngIf="loginCliked && !pwd.valid" class="inline-help-block">Password is required</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+		<mat-spinner class="loader" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+		</mat-card-content>
+		 
+		<mat-card-actions>
+			<button mat-raised-button (click)="onLogin()" color="primary" [disabled] = "showSpinner">Login</button>
+			<a mat-flat-button class="app-button-link" [routerLink]="['/forgot-password']">Forgot Password?</a> 
+		</mat-card-actions> 
+	</mat-card>
+
+</div>
