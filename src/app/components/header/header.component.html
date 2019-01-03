@@ -11,7 +11,8 @@
 	  <div class="acoount-details" *ngIf = "loggedIn">
 		  <table style="float: right;">
 			  <tr>
-				  <td><div class="upgrade" style="margin-right: 6px; margin-right: 24px;">Upgrade</div></td>
+                  <td><div class="upgrade" style="margin-right: 6px; margin-right: 24px;">Upgrade</div></td>
+                  <td><div class="upgrade" style="margin-right: 6px; margin-right: 24px;" (click)="onLogout()">Logout</div></td>
 				  <td><div class="notification"><mat-icon matBadge="15" matBadgeColor="warn" size="30" class="mat-color-theme" >notifications_none</mat-icon></div></td>
 				  <td><div class="account" style="margin-top: -4px;"><mat-icon class="mat-32 mat-color-theme">account_circle</mat-icon></div></td>
 			  </tr>

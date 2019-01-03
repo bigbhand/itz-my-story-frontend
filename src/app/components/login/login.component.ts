@@ -20,6 +20,11 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private loginService: LoginService, private alertService: AlertService) { }
 
   ngOnInit() {
+      if (this.loginService.validateSession()) {
+        this.loggedIn = true;
+      } else {
+         this.loggedIn = false;
+      }
   }
 
   onLogin(): void {
@@ -29,13 +34,15 @@ export class LoginComponent implements OnInit {
 
     this.loginService.validateCredentials(this.credentials.username, this.credentials.password).subscribe(
           res => {
-              console.log(res);
+              console.log('SUCCESS' + res);
               localStorage.setItem("xAuthToken", res.json().token);
               this.loggedIn = true;
               location.reload();
+              this.showSpinner = false;
           },
           error => {
-              console.log(error);
+              console.log('ERROR' + error);
+              this.showSpinner = false;
           }
       );
 
