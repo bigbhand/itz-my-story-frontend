@@ -2,30 +2,56 @@
 	<mat-toolbar>
 	  
 	  <!-- <div class="brand-name">Itz My Story</div> -->
-	  <div class="brand-name"><img [src]="logoPath" height="60px" width="216px"/></div>
+	  <div class="brand-name" [class.guest-brand-name]="!loggedIn"><img [src]="logoPath" height="60px" width="216px"/></div>
 	  
 	  <div class="search__container">
 	     <input class="search__input" type="text" placeholder="Search by story, writer, and categotry">
 	  </div>
 
-	  <div class="acoount-details" *ngIf = "loggedIn">
-		  <table style="float: right;">
-			  <tr>
-                  <td><div class="upgrade" style="margin-right: 6px; margin-right: 24px;">Upgrade</div></td>
-                  <td><div class="upgrade" style="margin-right: 6px; margin-right: 24px;" (click)="onLogout()">Logout</div></td>
-				  <td><div class="notification"><mat-icon matBadge="15" matBadgeColor="warn" size="30" class="mat-color-theme" >notifications_none</mat-icon></div></td>
-				  <td><div class="account" style="margin-top: -4px;"><mat-icon class="mat-32 mat-color-theme">account_circle</mat-icon></div></td>
-			  </tr>
-	      </table>
+	  <div class="acoount-toolbar" *ngIf = "loggedIn">
+		 <table>
+            <tr>
+                <td width= "70%"><div class="app-custom-button-flat inline-block upgrade-button">Upgrade</div></td>
+                <!--<div class="app-custom-button-flat inline-block" (click)="onLogout()">Logout</div>-->
+                <td width= "15%"><div class="inline-block notification-icon"><mat-icon matBadge="0" matBadgeColor="warn" size="32" class="mat-color-theme" >notifications_none</mat-icon></div></td>
+                <td width= "15%">
+                    <div class="inline-block account-icon">
+                        <mat-icon class="mat-32 mat-color-theme" [matMenuTriggerFor]="accountMenu">account_circle</mat-icon>
+                        <!--<button mat-icon-button class="mat-50 mat-color-theme" [matMenuTriggerFor]="accountMenu">
+                        <mat-icon>account_circle</mat-icon>
+                        </button>-->
+                        <mat-menu #accountMenu="matMenu" class="app-menu-content">
+                            <button mat-menu-item>
+                                <mat-icon class="mat-18 mat-color-theme">border_color</mat-icon>
+                                <span class="app-menu-text">My Stories</span>
+                            </button>
+                            <button mat-menu-item>
+                                <mat-icon class="mat-18 mat-color-theme">money</mat-icon>
+                                <span class="app-menu-text">My Earnings</span>
+                            </button>
+                            <button mat-menu-item>
+                                <mat-icon class="mat-18 mat-color-theme">settings</mat-icon>
+                                <span class="app-menu-text">Account Settings</span>
+                            </button>
+                            <button mat-menu-item (click)="onLogout()">
+                                <mat-icon class="mat-18 mat-color-theme">exit_to_app</mat-icon>
+                                <span class="app-menu-text">Logout</span>
+                            </button>
+                            <mat-divider></mat-divider>
+                            <button mat-menu-item>
+                                <mat-icon class="mat-18 mat-color-theme">help_outline</mat-icon>
+                                <span class="app-menu-text">Help</span>
+                            </button>
+                        </mat-menu>
+                    </div>
+                </td>
+            </tr>
+         </table>
 	  </div>
 	  
-	  <div class="guest-details" *ngIf = "!loggedIn">
-		  <table style="float: right;">
-			  <tr>
-				  <td><div class="upgrade" style="margin-right: 6px; margin-right: 24px;">Create an Account</div></td>
-				  <td><a mat-flat-button class="app-button-link" routerLink=".">Sign in</a></td>
-			  </tr>
-	      </table>
+	  <div class="guest-toolbar" *ngIf = "!loggedIn">
+        <div class="app-custom-button-flat inline-block">Create an Account</div>
+        <div class="inline-block"><a mat-flat-button class="app-custom-button-link" routerLink=".">Sign in</a></div>
 	  </div>
 	  
 	</mat-toolbar>

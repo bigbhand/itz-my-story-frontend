@@ -1,14 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body{
 	margin: 0px 0px;
 }
 
-.app-button-link{
+.app-custom-button-link{
+    font-family: 'Raleway', sans-serif;
 	background-color: transparent !important;
-	color: #333 !important;
+	color: #777 !important;
 }
+
+.app-custom-button-link:Hover{
+	color: #000 !important;
+}
+
+/* Palatino Garamond */
+
+.app-custom-button-flat {
+    /* border: 1px solid #575756; */
+	border: 1px solid #bbb;
+	padding: 6px 14px;
+	border-radius: 4px;
+    color: rgba(87, 87, 86, 0.8);
+    font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+}
+
+.app-custom-button-flat:HOVER{
+	border: 1px solid #323232;
+	color: rgba(87, 87, 86, 1);
+}
+
+.app-menu-text {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
 
 .mat-16 {
    font-size: 16px;
@@ -50,11 +86,28 @@ body{
    font-size: 34px;
 }
 
+.mat-36 {
+   font-size: 36px;
+}
+
+.mat-50 {
+   font-size: 50px;
+}
+
 .mat-color-theme{
 	color: rgba(87, 87, 86, 0.8);
 	fill: rgba(87, 87, 86, 0.8); 
 }
 
-.inline-block{
-	display: inline-block;
+.app-menu-content .mat-menu-content{
+  padding : 0px
+}
+
+.app-menu-content .mat-menu-content button{
+  height: 40px;
+  line-height: 40px;
+}
+
+.mat-menu-panel {
+    margin-top: 10%;
 }

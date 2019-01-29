@@ -18,6 +18,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { AlertComponent } from './directives/alert.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RegistrationComponent,
     AlertComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ReactiveFormsModule,
     HttpModule
   ],
+  entryComponents: [ ForgotPasswordComponent ],
   providers: [AppService, AlertService, LoginService],
   bootstrap: [AppComponent]
 })

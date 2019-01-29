@@ -6,11 +6,12 @@
 }
 
 .login-header{
-	font-size: 24px;
+    font-size: 24px;
+    font-family: Palatino;
 }
 
 .login-field{
-	width: 260px;
+	width: 100%;
 }
 
 .loader{
@@ -23,3 +24,5 @@
 	font-size: 12px;
 	color: #f44336;
 }
+
+

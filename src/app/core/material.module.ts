@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatGridListModule, MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule, 
          MatToolbarModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule, MatDatepickerModule, 
-         MatNativeDateModule, MatCheckboxModule, MatBadgeModule } from '@angular/material';
+         MatNativeDateModule, MatCheckboxModule, MatBadgeModule, MatDividerModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
@@ -22,7 +22,8 @@ import { MatRadioModule } from '@angular/material/radio';
   MatRadioModule,
   MatGridListModule,
   MatCheckboxModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatDividerModule
   ],
   exports: [
   CommonModule,
@@ -40,7 +41,8 @@ import { MatRadioModule } from '@angular/material/radio';
    MatRadioModule,
    MatGridListModule,
    MatCheckboxModule,
-   MatBadgeModule
+   MatBadgeModule,
+   MatDividerModule
    ],
 })
 export class CustomMaterialModule { 

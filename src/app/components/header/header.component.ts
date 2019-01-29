@@ -8,7 +8,7 @@ import { LoginService } from '../../services/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  logoPath = 'assets/images/app-logo.png' ;
+  logoPath = '/assets/images/app-logo.png' ;
   loggedIn = false;
 
   constructor(private loginService: LoginService) { }
@@ -19,6 +19,11 @@ export class HeaderComponent implements OnInit {
       } else {
          this.loggedIn = false;
       }
+
+      /* this.loginService.validateSession().subscribe(
+          res => { this.loggedIn = true },
+          error => { this.loggedIn = false; console.log(error) }
+      ); */
   }
 
   onLogout(): void {
